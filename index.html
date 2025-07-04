@@ -1,0 +1,25 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>School Login - Training Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <h2>School Training Portal</h2>
+  <form id="loginForm">
+    <label for="schoolCode">Enter School Code:</label>
+    <input type="text" id="schoolCode" required>
+    <button type="submit">Login</button>
+  </form>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const code = document.getElementById('schoolCode').value;
+      localStorage.setItem('schoolCode', code);
+      window.location.href = 'dashboard.html';
+    });
+  </script>
+</body>
+</html>
